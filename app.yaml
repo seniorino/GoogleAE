@@ -1,5 +1,9 @@
 application: prime-service-114619
+<<<<<<< HEAD
+version: 2
+=======
 version: 1
+>>>>>>> dbd6c759a171e39e2c2ac3c142587987b5f37c4e
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -8,11 +12,24 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
+<<<<<<< HEAD
+
+- url: /scripts
+  static_dir: static/scripts
+
+- url: /css
+  static_dir: static/css
+  
+- url: .*
+  script: main.app
+
+=======
   
 - url: .*
   script: main.app
   
   
+>>>>>>> dbd6c759a171e39e2c2ac3c142587987b5f37c4e
 libraries:
 - name: webapp2
   version: "2.5.2"
