@@ -20,6 +20,10 @@ body{
     font: 12px Arial, Helvetica, sans-serif;
     color: #666;
 }
+
+#map {  height: 50%;
+    }
+
  h1 {
     font: 24px "Trebuchet MS", Arial, Helvetica, sans-serif;
     padding: 10px 10px 10px 20px;
@@ -71,7 +75,6 @@ textarea{
 }
  select {
     background: #fbfbfb url('down-arrow.png') no-repeat right;
-    background: #fbfbfb url('down-arrow.png') no-repeat right;
    appearance:none;
     -webkit-appearance:none; 
    -moz-appearance: none;
@@ -93,3 +96,23 @@ button{
 button:hover{
     background: #3EB1DD;
 }
+
+div.img{
+    display:table;
+}
+div.img img{
+    margin:0;
+    padding:0;
+}
+div.img span{
+    line-height:normal;
+    font-size:11px;
+    display:table-caption;
+    margin:0;
+    background:#646464;
+    color:white;
+    font-style:italic;
+    padding:5px;
+    text-align:center;
+}
+

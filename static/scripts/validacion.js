@@ -3,8 +3,8 @@ function verificarCampos()
 { 
 /*verifica que el nombre, apellidos y email no sean nulos*/
 var nombre=document.getElementById("nombre").value;
-var apellidos=document.getElementById("contra1").value;
-var apellidos=document.getElementById("contra2").value;
+var contra1=document.getElementById("contra1").value;
+var contra2=document.getElementById("contra2").value;
 var email=document.getElementById("email").value;
 var idioma=document.getElementsByName("Language");
 
@@ -13,8 +13,6 @@ var ido= (idioma[0].value);
 //alert (idioma[0].value);
 
 
-
-debugger;
 if(nombre==''|| contra1 ==''|| email == '' || contra2 =='')
 {
 
@@ -42,6 +40,21 @@ return false;
 return true;
 }
 
+
+function verificarLogin()
+{
+	var usuario=document.getElementById("user").value;
+	var contra=document.getElementById("password").value;
+	if (usuario==' ' || contra== '')
+	{
+		alert('Introduzca toda la informacion necesaria(*)');
+		return false;
+	}
+	return true;
+
+}
+
+
 function verificarContras()
 {
 var contra1=document.getElementById("contra1").value;
@@ -50,7 +63,7 @@ var idioma=document.getElementsByName("Language");
 
 var ido= (idioma[0].value);
 
-
+debugger;
 
 if(   (contra1.length)<6  && ido == 'Castellano')
 {
@@ -72,7 +85,7 @@ else if(   (contra1.length)< 6  && ido == 'Euskera')
 alert('Pasahitza gutxienez 6 karaktere behar ditu(*)');
 return false;
 }
-
+	debugger;
 
 if(contra1 != contra2)
 {
@@ -133,6 +146,41 @@ return false;
 return true;
 }
 
+
+function verificarNombre()
+{
+//Verifica que el mail que se inserta es correcto
+	var nombre=document.getElementById("nombre").value;
+	var idioma=document.getElementsByName("Language");
+
+	var ido= (idioma[0].value);
+	expr = /^[A-Za-z0-9_-]*$/;
+	if ( !expr.test(nombre) )
+	{
+
+		if( ido == 'Castellano')
+		{
+			alert('Error: El nombre solo puede contener numeros y letras(*).');
+			return false;
+		}
+
+		if( ido == 'English')
+		{
+			alert('Error, the name can only contain numbers and letters(*)');
+			return false;
+		}
+
+		else
+		{
+			alert('Errorea, izenak bakarrik letrak eta zenbakiak izan ditzazke(*)');
+			return false;
+		}
+
+	}
+	return true;
+}
+
+
 function verificarTelefono()
 {
 //Verificamos que el telefono esta compuesto por 9 cifras numericas
@@ -169,4 +217,9 @@ return false;
 	}
 }
 return true;
+}
+
+function ValidarTodo()
+{
+	return verificarCampos()&&verificarMail()&&verificarContras()&&verificarTelefono()
 }
